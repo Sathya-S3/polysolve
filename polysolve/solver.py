@@ -5,7 +5,11 @@ from cowsay import cow
 
 CBRT_UNITY_IM = sqrt(3)/2 * 1j
 
-def quadratic(a, b, c):
+def quadratic(
+    a: float, 
+    b: float, 
+    c: float
+) -> tuple[complex, complex]:
     det = b**2 - (4*a*c)
 
     if math.isclose(det, 0):
@@ -13,7 +17,12 @@ def quadratic(a, b, c):
 
     return ((-b + sqrt(det)) / (2*a), (-b - sqrt(det)) / (2*a))
 
-def cubic(a, b, c, d):
+def cubic(
+    a: float, 
+    b: float, 
+    c: float, 
+    d: float
+) -> tuple[complex, complex, complex]:
     q = (3*a*c - b**2) / (9*a**2)
     r = (9*a*b*c - 27*a**2*d - 2*b**3) / (54*a**3)
 
