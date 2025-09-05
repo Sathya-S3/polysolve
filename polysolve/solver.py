@@ -10,6 +10,49 @@ def quadratic(
     b: float, 
     c: float
 ) -> tuple[complex, complex]:
+    """
+    Solves the roots of a quadratic equation.
+
+    Uses the quadratic formula. Result must be real.
+
+    Parameters
+    ----------
+    a
+       :math:`x^2` coefficient.
+    b
+       :math:`x` coefficient.
+    c
+       Constant value.
+
+    Returns
+    -------
+    tuple[complex, complex]
+        Positive and negative roots of quadratic as a complex number.
+
+    Notes
+    -----
+    Equation of the form:
+
+    .. math::
+
+        ax^{2} + bx + c
+
+    Examples
+    --------
+    >>> quadratic(1, 2, 0)
+    ((0j), (-2+0j))
+    >>> quadratic(3., 0., -1.)
+    ((0.5773502691896257+0j), (-0.5773502691896257+0j))
+
+    See Also
+    --------
+    numpy.polyval : Evaluate polynomial at point.
+
+    References
+    ----------
+    .. [1] O. McNoleg, "The integration of GIS, remote sensing,
+           expert systems ...
+    """
     det = b**2 - (4*a*c)
 
     if math.isclose(det, 0):
@@ -37,3 +80,7 @@ def cubic(
         cow("Degenerate MOOoo-ts")
 
     return (x1, x2, x3)
+
+if __name__ == "__main__":
+    import doctest
+    doctest.testmod()
